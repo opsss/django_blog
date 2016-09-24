@@ -1,0 +1,6 @@
+{% extends 'blog/base.html' %}
+{% block cat %}
+{% for object in object_list %}
+    <a href="{{ object.slug }}">{{ object.name }}</a>
+{% endfor %}
+{% endblock %}

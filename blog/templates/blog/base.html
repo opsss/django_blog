@@ -1,0 +1,40 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{% endblock %}</title>
+    <!-- Styles -->
+      <link rel="stylesheet" href="{% static "blog/css/styles.css" %}">
+</head>
+<body>
+    <header class="header">
+        <a href="{% url 'articles:articles' %}" class="site_name">Блог</a>
+        <nav class="top_navigation">
+            <ul>
+                <li>
+                    <a href="#">Статьи</a>
+                </li>
+                 <li>
+                    <a href="#">Портфолио</a>
+                </li>
+                 <li>
+                    <a href="#">Обо мне</a>
+                </li>
+            </ul>
+        </nav>
+
+    </header>
+    <main class="main">
+        {% block content %}
+        {% endblock %}
+    </main>
+    <footer>
+        <div class="copyright">
+            copyright 2016
+        </div>
+    </footer>
+</body>
+</html>

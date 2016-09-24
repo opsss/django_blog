@@ -1,0 +1,18 @@
+{% extends 'blog/base.html' %}
+{% block title %} {{ category.name }} {% endblock %}
+{% block content %}
+{% for item in articles_category %}
+    <article class="article_item">
+            <div class="article__title">
+                <a href="{% url 'articles:article_detail' slug=item.slug %}">{{ item.title }}</a>
+            </div>
+            <div class="article__date">Добавлена: {{ item.pub_date }}</div>
+        <div class="article__anonce">
+            {{ item.preview|safe }}
+        </div>
+        </article>
+{% endfor %}
+
+
+
+{% endblock %}
